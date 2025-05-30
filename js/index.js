@@ -11,27 +11,28 @@
 const userChoice = prompt("Choose weapon: rock, paper or scissors");
     console.log(userChoice);
 
-const randomNumber = Math.floor(Math.random() * 3); // Ett tall mellan 0 - 10
-    console.log (randomNumber);
 
-let computerChoice;
 
-if (randomNumber == 0) {
-    computerChoice = "rock";
-} else if (randomNumber == 1) {
-    computerChoice = "paper";
-} else if (randomNumber == 2) {
-    computerChoice = "scissors";
+
+
+function selectComputerWeapon() {
+    const randomNumber = Math.floor(Math.random() * 3); // Ett tall mellan 0 - 10
+        console.log (randomNumber);
+    if (randomNumber == 0) {
+        return "rock";
+    } else if (randomNumber == 1) {
+        return "paper";
+    } else if (randomNumber == 2) {
+        return "scissors";
+    }
 }
 
 //Kan också skriva:
 //if (userChoice == "sten" && computerChoice == "sten")
 //  console.log("Draw")
 
-console.log("User choice: ", userChoice);
-console.log("Computer choice: ", computerChoice);
-
-if (userChoice == "rock") {
+function determineWinner() {
+    if (userChoice == "rock") {
     if (computerChoice == "rock") {
         console.log("Draw");
     } else if (computerChoice == "paper") {
@@ -39,7 +40,7 @@ if (userChoice == "rock") {
     } else if (computerChoice == "scissors") {
         console.log("You win!");
     }
-} 
+  } 
 
 if (userChoice == "paper") {
     if (computerChoice == "rock") {
@@ -49,7 +50,7 @@ if (userChoice == "paper") {
     } else if (computerChoice == "scissors") {
         console.log("You lose...");
     }
-}
+  }
 
 if (userChoice == "scissors") {
     if (computerChoice == "rock") {
@@ -59,7 +60,17 @@ if (userChoice == "scissors") {
     } else if (computerChoice == "scissors") {
         console.log ("Draw");
     }
-}      
+  } 
+}
+
+let computerChoice = selectComputerWeapon();
+
+selectComputerWeapon();
+
+determineWinner();
+
+console.log("User choice: ", userChoice);
+console.log("Computer choice: ", computerChoice);    
 
 // const weaponRock = A;
 // const weaponPaper = B;
