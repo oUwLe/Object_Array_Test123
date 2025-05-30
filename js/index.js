@@ -16,7 +16,7 @@ const userChoice = prompt("Choose weapon: rock, paper or scissors");
 
 
 function selectComputerWeapon() {
-    const randomNumber = Math.floor(Math.random() * 3); // Ett tall mellan 0 - 10
+    const randomNumber = Math.floor(Math.random() * 3); // Ett tall mellan 0 - 2. Floor avrundar ner.
         console.log (randomNumber);
     if (randomNumber == 0) {
         return "rock";
